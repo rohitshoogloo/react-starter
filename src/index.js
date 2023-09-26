@@ -10,10 +10,13 @@ import "./index.css";
 
 //router
 import { router } from "./router";
+import { DarkThemeProvider } from "./context/DarkThemeContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <DarkThemeProvider>
+      <RouterProvider router={router} />
+    </DarkThemeProvider>
   </React.StrictMode>
 );
