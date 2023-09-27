@@ -1,0 +1,17 @@
+[
+  {
+    "id": 30001,
+    "product_name": "iphone 15",
+    "product_price": "69000",
+    "product_description": "Iphone 15 comes with a price of 69,000 for indian markets.",
+    "product_category": "mobiles",
+    "product_image": null,
+    "product_thumbnail": null,
+    "product_image_alt": null,
+    "product_images_gallery": [],
+    "product_status": "instock",
+    "product_attributes": [{ "color": "red" }],
+    "product_tags": ["phone", "mobile", "iphone"],
+    "product_country": "United States of America"
+  }
+]
