@@ -11,6 +11,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import AboutPage from "../pages/About";
 import ContactPage from "../pages/Contact";
+import CartPage from "../pages/Cart";
 
 //not found
 import NotFoundPage from "../common/Error/404";
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
       <Route element={<Home />} path="/" />
       <Route element={<AboutPage />} path="/about" />
       <Route element={<ContactPage />} path="/contact" />
+      <Route element={<CartPage />} path="/cart" />
     </Route>
   )
 );

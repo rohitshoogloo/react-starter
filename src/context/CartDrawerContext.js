@@ -5,7 +5,6 @@ const CartDrawerContext = createContext(null);
 const CartDrawerProvider = ({ children }) => {
 
     const [isCartOpen, setCartOpen] = useState(false);
-    console.log(isCartOpen);
     const toggleCart = () => {
         setCartOpen(!isCartOpen);
     }

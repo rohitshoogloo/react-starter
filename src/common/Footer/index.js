@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { Container, Button } from "react-bootstrap";
 import { FaRupeeSign, FaTrashAlt } from "react-icons/fa";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+
 import { DarkThemeContext } from "../../context/DarkThemeContext";
 
 import DrawerMenu from "../Navigation/DrawerMenu";
 
 import { useCartStore } from "../../store";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { theme } = useContext(DarkThemeContext);
@@ -23,7 +26,12 @@ const Footer = () => {
       <DrawerMenu title={"Shopping Cart"}>
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div>
-            <p className="mb-0">You have 4 items in your cart</p>
+            <p className="mb-0">You have {cartItems.length} items in your cart</p>
+          </div>
+          <div>
+            <Link to={'/cart'}>
+              Go to Cart <HiOutlineArrowNarrowRight />
+            </Link>
           </div>
         </div>
 
