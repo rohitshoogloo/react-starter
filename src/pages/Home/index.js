@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
+
+import { GlobalSearchContext } from "../../context/GlobalSearchContext";
 
 import ProductCard from "../../components/products/ProductCard";
 import ProductCardSkeleton from "../../components/products/ProductCardSkeleton";
 
 const Home = () => {
+
+  const { searchText } = useContext(GlobalSearchContext)
+
   const { isLoading, data, isError, error } = useQuery("products-list", () => {
     return axios.get(`https://api.jsonbin.io/v3/b/6513c3420574da7622b0eed4`, {
       headers: {
@@ -34,7 +39,12 @@ const Home = () => {
   }
 
   if (isError) return <>{error.message}</>;
-  const products = data.data.record || [];
+
+  const filteredProducts = (products, search) => {
+    return products.filter(item => item.product_name.toLowerCase().includes(search.toLowerCase()));
+  }
+
+  const products = filteredProducts(data.data.record || [], searchText);
 
   return (
     <>
@@ -52,6 +62,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+      
     </>
   );
 };

@@ -13,6 +13,8 @@ import "./index.css";
 //router
 import { router } from "./router";
 import { DarkThemeProvider } from "./context/DarkThemeContext";
+import { GlobalSearchProvider } from "./context/GlobalSearchContext";
+import { CartDrawerProvider } from "./context/CartDrawerContext";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +23,11 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <DarkThemeProvider>
-        <RouterProvider router={router} />
+        <CartDrawerProvider>
+          <GlobalSearchProvider>
+            <RouterProvider router={router} />
+          </GlobalSearchProvider>
+        </CartDrawerProvider>
       </DarkThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
     </QueryClientProvider>

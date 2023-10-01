@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { DarkThemeContext } from "../../context/DarkThemeContext";
 import { HeaderMenu } from "../Navigation";
 import SearchBox from "../SearchBox";
+import DrawerMenu from "../Navigation/DrawerMenu";
 
 const Header = () => {
   const { theme } = useContext(DarkThemeContext);
